@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "beam-hippius-migrate"
+version = "1.0.0"
+description = "Migrate data through Beam (SN105) using Hippius (SN75) storage — Bittensor cross-subnet composability"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "TensorFlow", email = "tensorflow@bittensor.ai"}]
+keywords = ["bittensor", "beam", "hippius", "data-migration", "subnets", "cross-chain"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Internet",
+    "Topic :: System :: Networking",
+]
+dependencies = [
+    "beam-network-sdk[s3]>=0.13.0",
+]
+
+[project.scripts]
+beam-hippius-migrate = "beam_hippius_migrate.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/tensorflowyt-eng/beam-hippius-migrate"
+Repository = "https://github.com/tensorflowyt-eng/beam-hippius-migrate"
+Documentation = "https://guide.beam.network/connectors/hippius"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["beam_hippius_migrate*"]
